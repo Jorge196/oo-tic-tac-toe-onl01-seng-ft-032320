@@ -49,6 +49,9 @@ class TicTacToe
       end
     end
 
+    def turn
+      puts "Please "
+
 #   def valid_move?(input)
 #     index = input_to_index(input)
 #     if (0..8).include?(index)
