@@ -42,7 +42,7 @@ class TicTacToe
   def valid_move?(input)
     index = input_to_index(input)
     if (0..8).include?(index)
-      if position_taken?(index) == false || poistion_take?(index) == nil
+      if position_taken?(index)== false || poistion_take?(index)== nil
       true
     else
     end
@@ -51,16 +51,23 @@ class TicTacToe
 
   def turn
     puts "Please choose a number 1-9:"
-  user_input = gets.chomp
-  index = input_to_index(user_input)
-  if valid_move?(index)
-    player_token = current_player
-    move(index, player_token)
-    display_board
+    input= gets.chomp
+    index = input_to_index(input)
+    if valid_move?(input) == true
+      move(input,current_player)
+      display_board
   else
-    turn
+    until valid_move?(input) == true
+      puts "Please choose a number 1-9:"
+      input= gets.chomp
+      index = input_to_index(input)
+    end
   end
 end
+
+      return true
+    end
+  end
 
   def turn_count
     counter = 0
@@ -118,16 +125,24 @@ end
   end
 
   def play
-    until over?
-      turn
-    end
+    until over == true
+      if won?!= false
+        break
+        end
 
-    if won?
+        if draw? == true
+
+          over = over?
+        end
+
+    if won?!= false 
       puts "Congratulations #{winner}!"
-    elsif draw?
+    if  draw? == true
       puts "Cats Game!"
     end
   end
+
+end
 
 
 
