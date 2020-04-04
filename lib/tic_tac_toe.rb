@@ -63,6 +63,10 @@ class TicTacToe
           index = input_index(input)
         end
       end
+    end
+
+        return true
+      end
     end 
 
 
