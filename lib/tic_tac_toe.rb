@@ -46,9 +46,9 @@ class TicTacToe
       if position_taken?(index) == false || position_take?(index) == nil
         true
       else
-
       end
-     
+    end 
+
 #   def valid_move?(input)
 #     index = input_to_index(input)
 #     if (0..8).include?(index)
