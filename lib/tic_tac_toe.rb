@@ -41,34 +41,8 @@ class TicTacToe
 
 
   def valid_move?(input)
-    index = input_to_index(input)
-    if (0..8).include?(index)
-      if position_taken?(index)== false || position_take?(index)== nil
-        true
-      else
-      end
-    end
-
-    def turn
-      puts "Please enter 1-9:"
-      input= gets.chomp
-      index= input_to_index(input)
-      if valid_move?(input)== true
-        move(input, current_player)
-        display_board
-      else
-        until valid_move?(input)== true
-          puts "Please enter 1-9:"
-          input= gets.chomp
-          index = input_index(input)
-        end
-      end
-    end
-
-        return true
-      end
-    end 
-
+    input.between?(0,8) && !position_taken?(input)
+  end
 
 
 #   def valid_move?(input)
@@ -101,19 +75,19 @@ class TicTacToe
 #     end
 #   end
 #
-  def turn_count
-    counter = 0
-    @board.each do |i|
-      if i == "X" || i == "O"
-        counter += 1
-      end
-    end
-    counter
-  end
-
-  def current_player
-    turn_count % 2 == 0 ? "X" : "O"
-  end
+  # def turn_count
+  #   counter = 0
+  #   @board.each do |i|
+  #     if i == "X" || i == "O"
+  #       counter += 1
+  #     end
+  #   end
+  #   counter
+  # end
+  #
+  # def current_player
+  #   turn_count % 2 == 0 ? "X" : "O"
+  # end
 #
 #
 #
